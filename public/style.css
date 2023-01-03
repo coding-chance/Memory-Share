@@ -1,0 +1,114 @@
+p {
+    color: #333333;
+}
+.post-title, .author, .posted-date {
+    color: #333333;
+}
+li {
+    margin-bottom: 15px;
+}
+li img {
+    max-width: 90%;
+    max-height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+h5 {
+    margin-top: 100px;
+}
+.account-info {
+    padding: 20px;
+    font-size: 20px;
+}
+.author {
+    margin-left: auto;
+}
+.posted-date {
+    margin-left: 20px;
+}
+.account-name {
+    margin-bottom: 20px;
+}
+.collapsible-body p {
+    padding: 0 30px;
+    font-size: 18px
+}
+.post-title{
+    font-size: 18px;
+}
+.edit-button {
+    display: block;
+    width: 20%;
+    font-size: 16px;
+    margin: 40px auto 10px auto;
+}
+
+
+.edit-icon {
+    vertical-align: middle;
+    margin-right: 5px;
+    font-size: 8px;
+}
+@media screen and (min-width: 481px) and (max-width: 1000px) {
+    .website-logo {
+        margin-left:7px;
+    }
+    .container {
+        margin: 0px;
+        width: 100%;
+    }
+    .collapsible-header {
+        display: block;
+    }
+    .post-title {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .author {
+        display: inline;
+    }
+    .posted-date {
+        display: inline;
+    }
+    .collapsible-body p {
+        font-size: 16px;
+        padding: 0;
+    }
+    #mobile-nav li a {
+        margin-top: 5px;
+        font-size: 20px;
+    }
+    .sidenav {
+        padding-top: 10px;
+    }
+    #modal-account h4 {
+        font-size: 25px;
+        margin-bottom: 0;
+    }
+    .account-name, .account-introduction {
+        font-size: 18px;
+    }
+    .account-info {
+        padding-top: 5px;
+    }
+    .account-name-data {
+        font-size: 25px;
+    }
+    .account-introduction-data {
+        font-size: 12px;
+    }
+    .edit-button {
+        display: block;
+        width: 50%;
+        font-size: 16px;
+        margin: 40px auto 10px auto;
+    }
+}
+@media screen and (max-width: 480px) {
+    .edit-button {
+        width: 80%;
+        font-size: 16px;
+    }
+}

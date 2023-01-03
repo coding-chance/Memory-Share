@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel=”shortcut icon” href=”favicon.ico”>
+    <link rel="stylesheet" href="style.css">
+    <title>Memory Share</title>
+</head>
+<body class="grey lighten-3">
+    <nav class="z-depth-0 grey lighten-1">
+        <div class="nav-wrapper container">
+            <a href="#" class="website-logo">   
+                <img src="images/memory_share_icon.png" alt="memory share" style="width: 180px; margin-top: 10px;">
+            </a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger right">
+                <i class="material-icons hide-on-med-and-up">menu</i>
+            </a>
+            <ul class="sidenav" id="mobile-nav">
+                <li class="logged-in">
+                    <a href="#" class="modal-trigger" data-target="modal-account">アカウント</a>
+                </li>
+                <li class="logged-in">
+                    <a href="#" class="modal-trigger sidenav-close" data-target="modal-post">投稿する</a>
+                </li>
+                <li class="logged-in">
+                    <a href="#"  id="logout-mobile" class="sidenav-close" >ログアウト</a>
+                </li>
+                <li class="logged-out">
+                    <a href="#" class="modal-trigger" data-target="modal-login">ログイン</a>
+                </li>
+                <li class="logged-out">
+                    <a href="#" class="modal-trigger" data-target="modal-signup">会員登録</a>
+                </li>
+            </ul>
+            <ul id="nav-mobile" class="right hide-on-small-and-down">
+                <li class="logged-in" style="display: none;">
+                    <a href="#" class="modal-trigger" data-target="modal-account">アカウント</a>
+                </li>
+                <li class="logged-in" style="display: none;">
+                    <a href="#" class="modal-trigger" data-target="modal-post">投稿する</a>
+                </li>
+                <li class="logged-in" style="display: none;">
+                    <a href="#" id="logout">ログアウト</a>
+                </li>
+                <li class="logged-out" style="display: none;">
+                    <a href="#" class="modal-trigger" data-target="modal-login">ログイン</a>
+                </li>
+                <li class="logged-out" style="display: none;">
+                    <a href ="#" class="waves-effect waves-light btn modal-trigger" data-target="modal-signup">会員登録</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="modal-signup" class="modal">
+        <div class="modal-content center-align">
+            <h4>会員登録</h4><br>
+            <form id="signup-form">
+                <div class="input-field">
+                    <input type="email" id="signup-email" required>
+                    <label for="signup-email">Eメールアドレス</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="signup-password" required>
+                    <label for="signup-password">パスワードを入力してください</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="signup-name" required />
+                    <label for="signup-name">ユーザー名</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="signup-introduction" required />
+                    <label for="signup-introduction">プチ自己紹介文</label>
+                </div>
+                <button class="btn teal lighten-1 z-depth-0">登録する</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-login" class="modal">
+        <div class="modal-content center-align">
+            <h4>ログイン</h4><br>
+            <form id="login-form">
+                <div class="input-field">
+                    <input type="email" id="login-email" required>
+                    <label for="login-email">Eメールアドレス</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="login-password" required>
+                    <label for="login-password">パスワードを入力してください</label>
+                </div>
+                <button class="btn teal lighten-1 z-depth-0">ログイン</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-account" class="modal">
+        <div class="modal-content center-align">
+            <h4>アカウント情報</h4><br>
+            <div class="account-info left-align"></div>
+        </div>
+    </div>
+    <div id="modal-post" class="modal">
+        <div class="modal-content center-align">
+            <h4>思い出を投稿</h4><br>
+            <form id="post-form">
+                <div class="input-field">
+                    <input type="text" id="title" required>
+                    <label for="title">タイトル</label>
+                </div>
+                <div class="input-field">
+                    <textarea id="content" class="materialize-textarea" required></textarea>
+                    <label for="content">本文を入力してください</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="url" required></textarea>
+                    <label for="content">画像URLを入力してください</label>
+                </div>
+                <button class="btn teal lighten-1 z-depth-0">投稿する</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-edit" class="modal">
+        <div class="modal-content center-align">
+            <h4>思い出を編集</h4><br>
+            <form id="edit-form">
+                <div class="input-field">
+                    <input type="text" id="editTitle" required>
+                </div>
+                <div class="input-field">
+                    <textarea id="editContent" class="materialize-textarea" required></textarea>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="editUrl" required></textarea>
+                </div>
+                <button class="btn teal lighten-1 z-depth-0">編集完了</button>
+            </form>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 40px;">
+        <ul class="collapsible z-depth-0 posts" style="border: none;">
+            
+        </ul>
+    </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+        const firebaseConfig = {
+        apiKey: "AIzaSyCJch2ujHxOn5eeZ5Jwh6ozPk1KCWijdTM",
+        authDomain: "memory-share-3ab14.firebaseapp.com",
+        projectId: "memory-share-3ab14",
+        storageBucket: "memory-share-3ab14.appspot.com",
+        messagingSenderId: "742977349705",
+        appId: "1:742977349705:web:61f681e9f6b699ab7ab798"
+    };
+        const app = initializeApp(firebaseConfig);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js_files/index.js" type="module"></script>
+    <script src="js_files/auth.js" type="module"></script>
+</body>
+</html>
